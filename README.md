@@ -46,3 +46,10 @@ vagrant destroy
 ```
 
 
+Comandos básicos:
+Entrar na VM
+```bash
+vagrant ssh
+```
+
+

@@ -1,0 +1,19 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+ 
+  config.vm.box = "generic/rocky9"
+
+  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
+  config.vm.provision "shell", path: "provision.sh"
+  #  inline: <<-SHELL aqui  irá rodas os comandos da linha abaixo, porém posso direcionar o mesmo para rodar atraves de outro aquivo, que e o caso do path
+  #   apt-get update
+  #   apt-get install -y apache2
+  # SHELL
+end
